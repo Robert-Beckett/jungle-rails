@@ -3,33 +3,39 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
   <div class="panel panel-default items">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th colspan="2">Product</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% enhanced_cart.each do |item| %>
-          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
-        <% end %>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th colspan="4">
-            TOTAL:
-          </th>
-          <th>
-            <%= cart_subtotal_cents / 100.0 %>
-          </th>
-        </tr>
-      </tfoot>
-    </table>
+    <% if enhanced_cart.length > 0 then %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% enhanced_cart.each do |item| %>
+            <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4">
+              TOTAL:
+            </th>
+            <th>
+              <%= cart_subtotal_cents / 100.0 %>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    <% else %>
+      <div class="alert alert-info">
+        It looks like your cart is empty!<br>
+        <button class="btn btn-secondary float-right"><%= link_to 'Home', :root %></button>
+      </div>
+    <% end %>
   </div>
 
   <div class="row">
