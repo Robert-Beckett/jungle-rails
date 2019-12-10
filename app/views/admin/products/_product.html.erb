@@ -11,7 +11,7 @@
     <%= product.category.name %>
   </td>
   <td>
-    <%= product.price %>
+    <%= Money.us_dollar(product.price).format %>
   </td>
   <td>
     <%= product.quantity %>
