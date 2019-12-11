@@ -1,0 +1,12 @@
+<header class="page-header">
+  <h1>Admin » All Categories</h1>
+</header>
+<br>
+<div class="well">
+  <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
+</div>
+<table class="table">
+  <% @categories.each do |category| %>
+    <%= render category %>
+  <% end %>
+</table>
