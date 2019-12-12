@@ -4,13 +4,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
 
-    if user.save
-      session[:user_id] = user.id
-      redirect_to '/'
-    else
+    if check = User.find_by(email: params['user']['email'])
       redirect_to '/signup'
+
+      
+    else
+      user = User.new(user_params)
+
+      if user.save
+        session[:user_id] = user.id
+        redirect_to '/'
+      else
+        redirect_to '/signup'
+      end
     end
   end
 
@@ -21,6 +28,7 @@ class UsersController < ApplicationController
       :name, 
       :email, 
       :password, 
-      :password_confirmation)
+      :password_confirmation
+    )
   end
 end
