@@ -9,8 +9,7 @@ RSpec.describe Product, type: :model do
     @subject = @category.products.create!(
       :name => 'Fat Rat',
       :price => 6500,
-      :quantity => 1,
-
+      :quantity => 1
     )
   end
   
@@ -19,18 +18,6 @@ RSpec.describe Product, type: :model do
     it 'should belong to category' do
       expect(subject).to have_attributes(:category => anything)
     end
-  end
-
-  before(:each) do
-    Product.destroy_all
-    Category.destroy_all
-    @category = Category.create!(name: 'Rats')
-    @subject = @category.products.create!(
-      :name => 'Fat Rat',
-      :price => 6500,
-      :quantity => 1,
-
-    )
   end
 
   describe 'Validations' do
