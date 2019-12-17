@@ -16,7 +16,7 @@ RSpec.describe Product, type: :model do
 
   describe 'Associations' do
     it 'should belong to category' do
-      expect(subject).to have_attributes(:category => anything)
+      expect(@subject).to have_attributes(:category => anything)
     end
   end
 
