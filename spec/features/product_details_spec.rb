@@ -23,10 +23,15 @@ RSpec.feature "Visitor navigates to products page", type: :feature, js: true do
     visit root_path
     expect(page).to have_css 'article.product'
 
-    visit 'products/1'
+    # visit 'products/1'
+    first('article.product').click_on('Details')
+
+    
 
     expect(page).to have_css '.products-show'
     expect(page).to have_css '.product-detail'
+
+    save_screenshot 'product_details.png'
   end
 
 end
