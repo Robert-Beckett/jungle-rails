@@ -2,6 +2,15 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots
+
+<img src="screenshots/home.png" alt="Home page" width="200" />
+<img src="screenshots/categories.png" alt="Categories" width="200" />
+<img src="screenshots/cart.png" alt="Cart" width="200" />
+<img src="screenshots/admin_dashboard.png" alt="admin dashboard" width="200" />
+<img src="screenshots/admin_categories.png" alt="Admin Categories" width="200" />
+<img src="screenshots/admin_products.png" alt="Admin Products" width="200" />
+
 
 ## Setup
 

@@ -27,7 +27,7 @@ RSpec.feature "Visitor adds an item to the cart", type: :feature, js: true do
 
     expect(page).to have_text 'My Cart (1)'
 
-    save_screenshot
+    save_screenshot("add_to_cart.png")
   end
 
 end
